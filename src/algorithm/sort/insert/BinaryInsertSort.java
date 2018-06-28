@@ -12,24 +12,23 @@ public class BinaryInsertSort implements ISort {
 
     @Override
     public int[] sort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 1; i < array.length; i++) {
             int temp = array[i];
-            int left = 0;
-            int right = i - 1;
+            int low = 0;
+            int high = i - 1;
             int mid = 0;
-            while (left <= right) {
-                mid = (left + right) / 2;
-                if (temp < array[mid]) {
-                    right = mid - 1;
+            while (low <= high) {  //直到low > high,没有可比较的项后，才能算找到插入的位置。
+                mid = (low + high) / 2;
+                if (temp < array[mid]) { //插入的值比中值小，high就要往mid的低位移，及mid - 1
+                    high = mid - 1;
                 } else {
-                    left = mid + 1;
+                    low = mid + 1;  //比中值大，low要右移一位
                 }
             }
-            for (int j = i - 1; j >= left; j--) {
-                array[j + 1] = array[j];
-            }
-            if (left != i) {
-                array[left] = temp;
+            //以下是找到插入值之后，从低位开始依次向后移动一位，并在低位插入。
+            System.arraycopy(array, low, array, low + 1, i - low);
+            if (low != i) { //low != i, 证明当前有比 比较值大的数，需要插入到最低位。
+                array[low] = temp;
             }
         }
         return array;

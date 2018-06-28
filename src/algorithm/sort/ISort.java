@@ -1,7 +1,9 @@
 package algorithm.sort;
 
 /**
- * 排序
+ * <a href="https://blog.csdn.net/gane_cheng/article/details/52652705" target="_blank">
+ * 常见排序算法及对应的时间复杂度和空间复杂度
+ * </a>    
  */
 public interface ISort {
 
