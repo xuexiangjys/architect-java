@@ -47,13 +47,13 @@ public class QuickSort implements ISort {
     private static int getMiddle(int[] array, int low, int high) {
         int temp = array[low];// 基准元素
         while (low < high) {
-            // 先从高位开始找，直到找到比基准元素小的元素位置，然后交换位置
+            // 先从高位开始找，直到找到比基准元素小的元素位置，然后把它放到左边【低位】去。
             while (low < high && array[high] >= temp) {
                 high--;
             }
             array[low] = array[high];
 
-            // 然后从低位开始找，直到找到比基准元素大的元素位置，然后交换位置
+            // 然后从低位开始找，直到找到比基准元素大的元素位置，然后把它放到右边【高位】去。
             while (low < high && array[low] <= temp) {
                 low++;
             }
