@@ -26,8 +26,8 @@ public class BinaryInsertSort implements ISort {
                 }
             }
             //以下是找到插入值之后，从低位开始依次向后移动一位，并在低位插入。
-            System.arraycopy(array, low, array, low + 1, i - low);
             if (low != i) { //low != i, 证明当前有比 比较值大的数，需要插入到最低位。
+                System.arraycopy(array, low, array, low + 1, i - low);
                 array[low] = temp;
             }
         }
