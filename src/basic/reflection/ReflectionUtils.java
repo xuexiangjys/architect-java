@@ -282,7 +282,7 @@ public class ReflectionUtils {
     }
 
     /**
-     * 反射构建实例
+     * 反射构建实例（对于参数是基础类型的方法，反射时用getClass获取的是包装类型，会出错）
      *
      * @param className 类名
      * @param argsClass 参数类型的集合
@@ -299,7 +299,7 @@ public class ReflectionUtils {
     }
 
     /**
-     * 反射构建实例
+     * 反射构建实例（对于参数是基础类型的方法，反射时用getClass获取的是包装类型，会出错）
      *
      * @param clazz     类
      * @param argsClass 参数类型的集合
