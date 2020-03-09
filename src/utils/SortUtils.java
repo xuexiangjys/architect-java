@@ -19,12 +19,14 @@ public class SortUtils {
         LogUtils.printBeforeSort(array);
 
         long startNanos = System.nanoTime();
-        array = iSort.sort(array);
+        for (int i = 0; i < 10000; i++) {
+            array = iSort.sort(array);
+        }
         long stopNanos = System.nanoTime();
 
         LogUtils.printAfterSort(array);
 
-        long lengthMillis = TimeUnit.NANOSECONDS.toMillis(stopNanos - startNanos);
+        double lengthMillis = TimeUnit.NANOSECONDS.toMillis(stopNanos - startNanos) / 1000D;
 
         System.out.println("共耗时：[" + lengthMillis + "]ms");
     }

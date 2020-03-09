@@ -1,5 +1,6 @@
-package algorithm.sort;
+package algorithm.sort.merge;
 
+import algorithm.sort.ISort;
 import utils.SortUtils;
 
 /**
