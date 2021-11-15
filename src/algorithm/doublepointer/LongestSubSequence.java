@@ -1,8 +1,6 @@
 package algorithm.doublepointer;
 
 
-import java.util.Arrays;
-
 /**
  * https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E5%8F%8C%E6%8C%87%E9%92%88.md#7-%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97
  * <p>
